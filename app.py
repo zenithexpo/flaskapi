@@ -34,6 +34,11 @@ def api_id():
     return jsonify(results)
 
 @app.route('/learning_routine', methods=[''])
+def learning_module():
+    if 'student_id' in request.args:
+        student_id = int(request.args['student_id'])
+    if 'course_id' in request.args:
+        course_id = int(request.args['course_id'])
 
 @app.errorhandler(404)
 def page_not_found(e):
